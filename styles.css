@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header, footer, main section {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
+
+header {
+    background-color: #7aa7e5;
+}
+.content {
+    background-color: #d1dce5;
+}
+.sign-up {
+    background-color: #f5c573;
+}
+.feature1 {
+    background-color: #d97d72;
+}
+.feature2 {
+    background-color: #f0a881;
+}
+.feature3 {
+    background-color: #85c7a3;
+}
+footer {
+    background-color: #333;
+    color: white;
+}
+
+body {
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        "content"
+        "sign-up"
+        "feature1"
+        "feature2"
+        "feature3";
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+.content { grid-area: content; }
+.sign-up { grid-area: sign-up; }
+.feature1 { grid-area: feature1; }
+.feature2 { grid-area: feature2; }
+.feature3 { grid-area: feature3; }
+
+@media (min-width: 768px) {
+    main {
+        grid-template-areas:
+            "content content"
+            "sign-up feature1"
+            "feature2 feature3";
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    .sign-up, .feature1, .feature2, .feature3 {
+        height: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-areas:
+            "feature1 feature2 feature3"
+            "sign-up sign-up sign-up"
+            "content content content";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+    
+    body {
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        grid-row-gap: 10px;
+    }
+}
